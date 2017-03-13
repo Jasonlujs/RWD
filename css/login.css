@@ -1,0 +1,615 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/*cssresetend*/
+
+@font-face {
+    font-family: NotoSansCJKtc-Medium;
+    src: url(../NotoSansCJKtc-Medium.otf) ;
+   
+}
+@font-face{
+    font-family: NotoSansCJKtc-Black;
+     src: url(../NotoSansCJKtc-Black.otf) ;
+}
+.wrap {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.header {
+    width: 100%;
+    position: relative;
+}
+
+.headerdesk {
+    text-align: center;
+    height: 420px;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(../images/header_desktop.png);
+}
+
+@media (max-width: 320px) {
+    .headerdesk {
+        background-image: url(../images/header_mobile.png);
+    }
+}
+
+.topmenu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.75);
+    height: 56px;
+    width: 100%;
+}
+
+.logo {
+    padding-top: 17px;
+    padding-left: 42px;
+}
+
+.showmenu {
+    display: none;
+    color: white;
+}
+
+@media (max-width: 320px) {
+    .logo {
+        padding-left: 13px;
+    }
+}
+
+.menu {
+    float: right;
+}
+
+.menu ul {
+    margin-top: 17px;
+}
+
+.menu li {
+    float: left;
+    font-family: 'cwTeXHei', sans-serif;
+    font-size: 16px;
+    color: #FFFFFF;
+    padding-right: 31px;
+}
+
+.menu li a {
+    display: block;
+    color: #FFFFFF;
+    padding: 1em;
+    text-decoration: none;
+}
+
+.menu li :hover{
+border-top: white solid 2px;
+}
+
+@media (max-width: 767px) {
+    .menu {
+        /*隱藏選單開始*/
+        max-height: 0px;
+        overflow: hidden;
+        /*隱藏選單結束*/
+        transition: max-height 2s;
+        margin-top: 1px;
+        /*絕對定位疊在網頁上*/
+        position: absolute;
+        z-index: 100;
+        /*header 80px+1px boder 線條*/
+        top: 54px;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.75);
+    }
+    .menu li {
+        float: none;
+        border-bottom: 1px dashed #FFFFFF;
+    }
+    .menu li a {
+        transition: all 0.1s;
+    }
+    .menu li a:hover {
+        background: #FFFFFF;
+        color: black;
+    }
+    .showmenu {
+        display: block;
+        float: right;
+        margin: 1em;
+    }
+    /*jQ點擊後動態在 body 加上 class */
+    .menu-show .menu {
+        max-height: 320px
+    }
+
+    .menu li:hover {
+       border-top: white solid 0px;
+    }
+}
+
+.title {
+    margin-top: 125px;
+    display: inline-block;
+    width: 85%;
+    height: auto;
+    background: rgba(0, 0, 0, 0.35);
+    padding-bottom: 15px;
+}
+
+.title h2 {
+    font-family: 'cwTeXHei', sans-serif;
+    font-size: 36px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 76px;
+}
+
+.title p {
+    font-family: 'cwTeXHei', sans-serif;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 16px;
+    line-height: 20px;
+}
+
+.titlebr {
+    display: none;
+}
+
+@media (max-width: 425px) {
+    .title {
+        width: 100%;
+        height: 194px;
+    }
+    .titlebr {
+        display: inline;
+    }
+    .title h2 {
+        margin-top: 20px;
+        line-height: 50px;
+    }
+}
+
+@media (max-width: 375px) {
+    .title {
+        width: 100%;
+        height: 194px;
+    }
+    .titlebr {
+        display: inline;
+    }
+    .title h2 {
+        margin-top: 20px;
+        line-height: 50px;
+    }
+}
+
+@media (max-width: 320px) {
+    .title {
+        width: 100%;
+        height: 194px;
+    }
+    .titlebr {
+        display: inline;
+    }
+    .title h2 {
+        margin-top: 20px;
+        line-height: 50px;
+    }
+}
+
+
+.main {
+    width: 100%;
+    background: #efe9e7;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.main h2 {
+    background: url(../images/logo_l@svg.svg);
+    /*請修改成你要替換的圖片*/
+    display: block;
+    font-size: 0;
+    height: 48px;
+    /*該圖片的高度*/
+    width: 243px;
+    /*該圖片的寬度*/
+    text-indent: -5000px;
+    margin: 0 auto;
+}
+
+.main h3 {
+    font-family: NotoSansCJKtc-Medium;
+    font-size: 20px;
+    color: #3D1101;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.login {
+    width: 300px;
+    height: 273px;
+    margin: 0 auto;
+    margin-top: 35px;
+    border-top: 3px solid #FF5E45;
+    background: #EFE9E7;
+    box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.16);
+}
+
+.login form {
+    padding: 15px;
+}
+
+.login legend {
+    margin: 0 auto;
+    font-family: NotoSansCJKtc-Black;
+    font-size: 18px;
+    color: #3D1101;
+    font-size: 18px;
+    color: #3D1101;
+}
+
+.login input {
+    width: 266px;
+    height: 28px;
+}
+
+.login-email {
+    margin-top: 15px;
+}
+
+.login-email label {
+    font-family: Microsoft JhengHei;
+    font-size: 16px;
+    color: #3D1101;
+}
+
+.login-password {
+    margin-top: 15px;
+}
+
+.login-password label {
+    font-family: Microsoft JhengHei;
+    font-size: 16px;
+    color: #3D1101;
+}
+
+.login p {
+    font-family: Microsoft JhengHei;
+    font-size: 14px;
+    color: #FF5E45;
+    margin-bottom: 30px;
+}
+
+.login-but .loginbut {
+    width: 125px;
+    height: 32px;
+    background-color: #f56c23;
+    border: none;
+    color: white;
+    font-size: 14px;
+    margin-right: 5px;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.login-but .loginsign {
+    width: 125px;
+    height: 32px;
+    background-color: #a09e9e;
+    border: none;
+    color: white;
+    font-size: 14px;
+    margin-right: 5px;
+    font-weight: bold;
+    border-radius: 3px;
+}
+.login-but .loginbut:hover{
+    background-color: #ba4405;
+}
+.login-but .loginsign:hover{
+    background-color: #5b5958;
+}
+
+.fontAwesome {
+    font-family: Helvetica, 'FontAwesome', sans-serif;
+    font-size: 17px;
+    padding-left: 10px;
+}
+@media (max-width: 425px) {
+    .login {
+        width: 90%;
+        height: auto;
+    }
+    .login input {
+        width: 95%;
+    }
+    .login-but {
+        margin: 0 auto;
+        text-align: center;
+    }
+    .login-but .loginbut {
+        width: 40%;
+        height: 50px;
+    }
+    .login-but .loginsign {
+        width: 40%;
+        height: 50px;
+    }
+    .loginsign {
+        margin-right: 10px;
+    }
+    .loginbut {
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 375px) {
+    .login {
+        width: 90%;
+        height: auto;
+    }
+    .login input {
+        width: 95%;
+    }
+}
+
+.footer {
+    background: #efe9e7;
+    width: 100%;
+    overflow: hidden;
+    float: left;
+}
+
+.footer-content {
+    float: left;
+    width: 29%;
+    margin-top: 50px;
+    margin-right: 21px;
+    margin-left: 43px;
+}
+
+.footer-content p {
+    margin-top: 16px;
+}
+
+.footer-tel {
+    float: left;
+    margin-top: 50px;
+}
+
+.footer-tel p {
+    margin-top: 16px;
+}
+
+.footer-logo {
+    margin-top: 50px;
+    margin-right: 2%;
+}
+
+.footer-logo .logo2 {
+    text-align: right;
+}
+
+.footer-community {
+    width: 100%;
+    text-align: right;
+}
+
+.footer-community img {
+    margin-top: 22px;
+    width: 31px;
+    height: 31px;
+}
+
+.footer h3 {
+    font-family: 'cwTeXHei', sans-serif;
+    font-size: 24px;
+    color: #3D1101;
+}
+
+.footer p {
+    font-family: 'cwTeXHei', sans-serif;
+    font-size: 16px;
+    color: #3D1101;
+    line-height: 20px;
+}
+
+@media (max-width: 425px) {
+    .footer-content {
+        float: none;
+        width: 90%;
+        padding: 0 15px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .footer-tel {
+        float: none;
+        padding: 0 15px;
+    }
+    .footer-logo {
+        margin-right: 5%;
+    }
+}
+
+@media (max-width: 375px) {
+    .footer-content {
+        float: none;
+        width: 90%;
+        padding: 0 15px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .footer-tel {
+        float: none;
+        padding: 0 15px;
+    }
+    .footer-logo {
+        margin-right: 5%;
+    }
+}
+
+@media (max-width: 320px) {
+    .footer-content {
+        float: none;
+        width: 90%;
+        padding: 0 15px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .footer-tel {
+        float: none;
+        padding: 0 15px;
+    }
+    .footer-logo {
+        margin-right: 5%;
+    }
+}

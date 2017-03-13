@@ -1,0 +1,1462 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/*cssresetend*/
+
+.wrap {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.header {
+    width: 100%;
+    position: relative;
+}
+
+.headerdesk {
+    text-align: center;
+    height: 420px;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(../images/header_desktop.png);
+}
+
+@media (max-width: 320px) {
+    .headerdesk {
+        background-image: url(../images/header_mobile.png);
+    }
+}
+
+.topmenu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.75);
+    height: 56px;
+    width: 100%;
+}
+
+.logo {
+    padding-top: 17px;
+    padding-left: 42px;
+}
+
+.showmenu {
+    display: none;
+    color: white;
+}
+
+@media (max-width: 320px) {
+    .logo {
+        padding-left: 13px;
+    }
+}
+
+.menu {
+    float: right;
+}
+
+.menu ul {
+    margin-top: 17px;
+}
+
+.menu li {
+    float: left;
+    font-family: 'cwTeXHei', sans-serif;
+    font-size: 16px;
+    color: #FFFFFF;
+    padding-right: 31px;
+}
+
+.menu li a {
+    display: block;
+    color: #FFFFFF;
+    padding: 1em;
+    text-decoration: none;
+}
+
+.menu li :hover{
+border-top: white solid 2px;
+}
+
+@media (max-width: 767px) {
+    .menu {
+        /*隱藏選單開始*/
+        max-height: 0px;
+        overflow: hidden;
+        /*隱藏選單結束*/
+        transition: max-height 2s;
+        margin-top: 1px;
+        /*絕對定位疊在網頁上*/
+        position: absolute;
+        z-index: 100;
+        /*header 80px+1px boder 線條*/
+        top: 54px;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.75);
+    }
+    .menu li {
+        float: none;
+        border-bottom: 1px dashed #FFFFFF;
+    }
+    .menu li a {
+        transition: all 0.1s;
+    }
+    .menu li a:hover {
+        background: #FFFFFF;
+        color: black;
+    }
+    .showmenu {
+        display: block;
+        float: right;
+        margin: 1em;
+    }
+    /*jQ點擊後動態在 body 加上 class */
+    .menu-show .menu {
+        max-height: 320px
+    }
+
+    .menu li:hover {
+       border-top: white solid 0px;
+    }
+}
+
+.title {
+    margin-top: 125px;
+    display: inline-block;
+    width: 85%;
+    height: auto;
+    background: rgba(0, 0, 0, 0.35);
+    padding-bottom: 15px;
+}
+
+.title h2 {
+    font-family: 'cwTeXHei', sans-serif;
+    font-size: 36px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 76px;
+}
+
+.title p {
+    font-family: 'cwTeXHei', sans-serif;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 16px;
+    line-height: 20px;
+}
+
+.titlebr {
+    display: none;
+}
+
+@media (max-width: 425px) {
+    .title {
+        width: 100%;
+        height: 194px;
+    }
+    .titlebr {
+        display: inline;
+    }
+    .title h2 {
+        margin-top: 20px;
+        line-height: 50px;
+    }
+}
+
+@media (max-width: 375px) {
+    .title {
+        width: 100%;
+        height: 194px;
+    }
+    .titlebr {
+        display: inline;
+    }
+    .title h2 {
+        margin-top: 20px;
+        line-height: 50px;
+    }
+}
+
+@media (max-width: 320px) {
+    .title {
+        width: 100%;
+        height: 194px;
+    }
+    .titlebr {
+        display: inline;
+    }
+    .title h2 {
+        margin-top: 20px;
+        line-height: 50px;
+    }
+}
+
+
+.feature {
+    background: #efe9e7;
+    width: 100%;
+    overflow: auto;
+    padding-bottom: 50px;
+    margin: 0 auto;
+}
+
+.line {
+    padding-top: 50px;
+    padding-bottom: 31px;
+    text-align: center;
+    font-family: 'cwTeXHei', sans-serif;
+    font-size: 20px;
+    color: #3D1101;
+    line-height: 32px;
+}
+
+.feature-box {
+    width: 27.33333%;
+    float: left;
+    padding: 0 3%;
+}
+
+.feature .feature-img {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.feature-img img {
+    border-radius: 50%;
+}
+
+.feature .feature-content h4 {
+    text-align: center;
+    font-family: 'cwTeXHei', sans-serif;
+    font-size: 18px;
+    color: #3D1101;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.feature .feature-content p {
+    font-family: 'cwTeXHei', sans-serif;
+    font-size: 16px;
+    color: #3D1101;
+    line-height: 20px;
+}
+
+@media (max-width: 736px) {
+    .feature {
+        padding-bottom: 30px;
+    }
+    .feature-box {
+        float: none;
+        width: 75%;
+        margin: 0 auto;
+        padding-bottom: 30px;
+    }
+}
+
+@media (max-width: 667px) {
+    .feature {
+        padding-bottom: 30px;
+    }
+    .feature-box {
+        float: none;
+        width: 75%;
+        margin: 0 auto;
+        padding-bottom: 30px;
+    }
+}
+
+@media (max-width: 425px) {
+    .feature {
+        padding-bottom: 30px;
+    }
+    .feature-box {
+        float: none;
+        width: 75%;
+        margin: 0 auto;
+        padding-bottom: 30px;
+    }
+}
+
+
+@media (max-width: 375px) {
+    .feature {
+        padding-bottom: 30px;
+    }
+    .feature-box {
+        float: none;
+        width: 260px;
+        margin: 0 auto;
+        padding-bottom: 30px;
+    }
+}
+
+@media (max-width: 320px) {
+    .feature {
+        padding-bottom: 30px;
+    }
+    .feature-box {
+        float: none;
+        width: 260px;
+        margin: 0 auto;
+        padding-bottom: 30px;
+    }
+}
+
+.main {
+    background: #3D1101;
+    width: 100%;
+    overflow: hidden;
+}
+
+.main-img {
+    float: left;
+    margin-left: 42px;
+    text-align: center;
+    width: 470px;
+    height: 460px;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(../images/main_chef_brown.png);
+}
+
+.main-content {
+    margin-left: 52%;
+    margin-right: 3%;
+    margin-top: 81px;
+}
+
+.main h3 {
+    font-family: 'cwTeXHei', sans-serif;
+    color: #EFE9E7;
+}
+
+.main h4 {
+    font-family: 'cwTeXHei', sans-serif;
+    color: #EFE9E7;
+    margin-top: 5px;
+}
+
+.main p {
+    margin-top: 16px;
+    font-family: 'cwTeXHei', sans-serif;
+    color: #EFE9E7;
+}
+
+.main-text {
+    width: 410px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding-bottom: 0;
+    }
+    .main-img {
+        width: 373px;
+        margin-left: 1%;
+        margin-top: 0;
+    }
+    .main-text {
+        width: 330px;
+    }
+}
+
+
+@media (max-width: 736px) {
+    .main {
+        padding-bottom: 0;
+    }
+    .main-img {
+        width: 373px;
+        margin-left: 1%;
+        margin-top: 0;
+    }
+    .main-text {
+        width: 330px;
+    }
+    .main-content {
+    margin-left: 54%;
+}
+
+}
+
+@media (max-width: 667px) {
+    .main {
+        padding-bottom: 0;
+    }
+    .main-img {
+        width: 325px;
+        margin-left: 1%;
+        margin-top: 0;
+    }
+    .main-text {
+        width: 265px;
+    }
+}
+
+
+
+@media (max-width: 620px) and (min-width: 415px){
+    .main-text {
+        width: 100%;
+    }
+    .main-content {
+        width: 75%;
+        margin: 0 auto;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .main-img {
+        width: 75%;
+        margin-left: 0;
+        margin-top: 0;
+        float: none;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 414px) {
+    .main-text {
+        width: 100%;
+    }
+    .main-content {
+        width: 260px;
+        margin: 0 auto;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .main-img {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0;
+        float: none;
+    }
+}
+
+@media (max-width: 375px) {
+    .main-text {
+        width: 100%;
+    }
+    .main-content {
+        width: 260px;
+        margin: 0 auto;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .main-img {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0;
+        float: none;
+    }
+}
+
+@media (max-width: 320px) {
+    .main-text {
+        width: 100%;
+    }
+    .main-content {
+        width: 260px;
+        margin: 0 auto;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .main-img {
+        width: 320px;
+        margin-left: 0;
+        margin-top: 0;
+        float: none;
+    }
+}
+
+
+.avatar {
+    background: #efe9e7;
+    width: 100%;
+    overflow: auto;
+}
+
+.avatar-title {
+    font-family: 'cwTeXHei', sans-serif;
+    font-size: 24px;
+    color: #3D1101;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.avatar-box {
+    margin-top: 32px;
+    float: left;
+    width: 26.33333%;
+    padding: 0 3%;
+}
+
+.avatar-img {
+    float: left;
+}
+
+.avatar-img img {
+    border-radius: 50%;
+}
+
+.avatar-content {
+    margin-top: 22px;
+    margin-left: 75px;
+}
+
+.avatar-content h4 {
+    margin-bottom: 22px;
+    font-family: MicrosoftJhengHeiRegular;
+    font-size: 18px;
+    color: #3D1101;
+}
+
+.avatar-content p {
+    margin-bottom: 16px;
+    font-family: MicrosoftJhengHeiRegular;
+    font-size: 16px;
+    color: #3D1101;
+    line-height: 24px;
+}
+
+.avatar-content .boxfooter {
+    float: right;
+    font-family: MicrosoftJhengHeiRegular;
+    font-size: 16px;
+    color: rgba(61, 17, 0, 0.75);
+    line-height: 24px;
+}
+
+@media (max-width: 768px) {
+    .avatar-box {
+        width: 30.33333%;
+        padding: 0 1.5%;
+    }
+}
+
+@media (max-width: 736px) {
+    .avatar-box {
+        width: 90%;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 667px) {
+    .avatar-box {
+        width: 90%;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 620px) and (min-width: 426px){
+        .avatar-box {
+        width: 90%;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 425px) {
+    .avatar-box {
+        width: 90%;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 375px) {
+    .avatar-box {
+        width: 90%;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    .avatar-box {
+        width: 90%;
+        padding: 0 10px;
+    }
+}
+
+
+.form-all {
+    width: 100%;
+    overflow: hidden;
+    background: #f6f4f3;
+    padding-bottom: 50px;
+}
+
+.form-all h3 {
+    font-family: 'cwTeXHei', sans-serif;
+    font-size: 24px;
+    color: #3D1101;
+    text-align: center;
+    padding-top: 50px;
+    line-height: 35px;
+}
+
+.form-map {
+    margin-top: 38px;
+    margin-left: 42px;
+    float: left;
+}
+
+.form {
+    max-width: 100%;
+    margin-top: 38px;
+    margin-left: 524px;
+    margin-right: 3%;
+}
+
+
+/*!
+Pure v0.6.1
+Copyright 2013 Yahoo!
+Licensed under the BSD License.
+https://github.com/yahoo/pure/blob/master/LICENSE.md
+*/
+
+
+/*csslint box-model:false*/
+
+
+/*
+Box-model set to false because we're setting a height on select elements, which
+also have border and padding. This is done because some browsers don't render
+the padding. We explicitly set the box-model for select elements to border-box,
+so we can ignore the csslint warning.
+*/
+
+.pure-form input[type="text"],
+.pure-form input[type="password"],
+.pure-form input[type="email"],
+.pure-form input[type="url"],
+.pure-form input[type="date"],
+.pure-form input[type="month"],
+.pure-form input[type="time"],
+.pure-form input[type="datetime"],
+.pure-form input[type="datetime-local"],
+.pure-form input[type="week"],
+.pure-form input[type="number"],
+.pure-form input[type="search"],
+.pure-form input[type="tel"],
+.pure-form input[type="color"],
+.pure-form select,
+.pure-form textarea {
+    padding: 0.5em 0.6em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 3px #ddd;
+    border-radius: 4px;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+
+.pure-form input:not([type]) {
+    padding: 0.5em 0.6em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 3px #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+/* Chrome (as of v.32/34 on OS X) needs additional room for color to display. */
+
+
+/* May be able to remove this tweak as color inputs become more standardized across browsers. */
+
+.pure-form input[type="color"] {
+    padding: 0.2em 0.5em;
+}
+
+.pure-form input[type="text"]:focus,
+.pure-form input[type="password"]:focus,
+.pure-form input[type="email"]:focus,
+.pure-form input[type="url"]:focus,
+.pure-form input[type="date"]:focus,
+.pure-form input[type="month"]:focus,
+.pure-form input[type="time"]:focus,
+.pure-form input[type="datetime"]:focus,
+.pure-form input[type="datetime-local"]:focus,
+.pure-form input[type="week"]:focus,
+.pure-form input[type="number"]:focus,
+.pure-form input[type="search"]:focus,
+.pure-form input[type="tel"]:focus,
+.pure-form input[type="color"]:focus,
+.pure-form select:focus,
+.pure-form textarea:focus {
+    outline: 0;
+    border-color: #129FEA;
+}
+
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+
+.pure-form input:not([type]):focus {
+    outline: 0;
+    border-color: #129FEA;
+}
+
+.pure-form input[type="file"]:focus,
+.pure-form input[type="radio"]:focus,
+.pure-form input[type="checkbox"]:focus {
+    outline: thin solid #129FEA;
+    outline: 1px auto #129FEA;
+}
+
+.pure-form .pure-checkbox,
+.pure-form .pure-radio {
+    margin: 0.5em 0;
+    display: block;
+}
+
+.pure-form input[type="text"][disabled],
+.pure-form input[type="password"][disabled],
+.pure-form input[type="email"][disabled],
+.pure-form input[type="url"][disabled],
+.pure-form input[type="date"][disabled],
+.pure-form input[type="month"][disabled],
+.pure-form input[type="time"][disabled],
+.pure-form input[type="datetime"][disabled],
+.pure-form input[type="datetime-local"][disabled],
+.pure-form input[type="week"][disabled],
+.pure-form input[type="number"][disabled],
+.pure-form input[type="search"][disabled],
+.pure-form input[type="tel"][disabled],
+.pure-form input[type="color"][disabled],
+.pure-form select[disabled],
+.pure-form textarea[disabled] {
+    cursor: not-allowed;
+    background-color: #eaeded;
+    color: #cad2d3;
+}
+
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+
+.pure-form input:not([type])[disabled] {
+    cursor: not-allowed;
+    background-color: #eaeded;
+    color: #cad2d3;
+}
+
+.pure-form input[readonly],
+.pure-form select[readonly],
+.pure-form textarea[readonly] {
+    background-color: #eee;
+    /* menu hover bg color */
+    color: #777;
+    /* menu text color */
+    border-color: #ccc;
+}
+
+.pure-form input:focus:invalid,
+.pure-form textarea:focus:invalid,
+.pure-form select:focus:invalid {
+    color: #b94a48;
+    border-color: #e9322d;
+}
+
+.pure-form input[type="file"]:focus:invalid:focus,
+.pure-form input[type="radio"]:focus:invalid:focus,
+.pure-form input[type="checkbox"]:focus:invalid:focus {
+    outline-color: #e9322d;
+}
+
+.pure-form select {
+    /* Normalizes the height; padding is not sufficient. */
+    height: 2.25em;
+    border: 1px solid #ccc;
+    background-color: white;
+}
+
+.pure-form select[multiple] {
+    height: auto;
+}
+
+.pure-form label {
+    margin: 0.5em 0 0.2em;
+}
+
+.pure-form fieldset {
+    margin: 0;
+    padding: 0.35em 0 0.75em;
+    border: 0;
+}
+
+.pure-form legend {
+    display: block;
+    width: 100%;
+    padding: 0.3em 0;
+    margin-bottom: 0.3em;
+    color: #333;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.pure-form-stacked input[type="text"],
+.pure-form-stacked input[type="password"],
+.pure-form-stacked input[type="email"],
+.pure-form-stacked input[type="url"],
+.pure-form-stacked input[type="date"],
+.pure-form-stacked input[type="month"],
+.pure-form-stacked input[type="time"],
+.pure-form-stacked input[type="datetime"],
+.pure-form-stacked input[type="datetime-local"],
+.pure-form-stacked input[type="week"],
+.pure-form-stacked input[type="number"],
+.pure-form-stacked input[type="search"],
+.pure-form-stacked input[type="tel"],
+.pure-form-stacked input[type="color"],
+.pure-form-stacked input[type="file"],
+.pure-form-stacked select,
+.pure-form-stacked label,
+.pure-form-stacked textarea {
+    display: block;
+    margin: 0.25em 0;
+}
+
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+
+.pure-form-stacked input:not([type]) {
+    display: block;
+    margin: 0.25em 0;
+}
+
+.pure-form-aligned input,
+.pure-form-aligned textarea,
+.pure-form-aligned select,
+
+/* NOTE: pure-help-inline is deprecated. Use .pure-form-message-inline instead. */
+
+.pure-form-aligned .pure-help-inline,
+.pure-form-message-inline {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+}
+
+.pure-form-aligned textarea {
+    vertical-align: top;
+}
+
+
+/* Aligned Forms */
+
+.pure-form-aligned .pure-control-group {
+    margin-bottom: 0.5em;
+}
+
+.pure-form-aligned .pure-control-group label {
+    text-align: right;
+    display: inline-block;
+    vertical-align: middle;
+    width: 10em;
+    margin: 0 1em 0 0;
+}
+
+.pure-form-aligned .pure-controls {
+    margin: 1.5em 0 0 11em;
+}
+
+
+/* Rounded Inputs */
+
+.pure-form input.pure-input-rounded,
+.pure-form .pure-input-rounded {
+    border-radius: 2em;
+    padding: 0.5em 1em;
+}
+
+
+/* Grouped Inputs */
+
+.pure-form .pure-group fieldset {
+    margin-bottom: 10px;
+}
+
+.pure-form .pure-group input,
+.pure-form .pure-group textarea {
+    display: block;
+    padding: 10px;
+    margin: 0 0 -1px;
+    border-radius: 0;
+    position: relative;
+    top: -1px;
+}
+
+.pure-form .pure-group input:focus,
+.pure-form .pure-group textarea:focus {
+    z-index: 3;
+}
+
+.pure-form .pure-group input:first-child,
+.pure-form .pure-group textarea:first-child {
+    top: 1px;
+    border-radius: 4px 4px 0 0;
+    margin: 0;
+}
+
+.pure-form .pure-group input:first-child:last-child,
+.pure-form .pure-group textarea:first-child:last-child {
+    top: 1px;
+    border-radius: 4px;
+    margin: 0;
+}
+
+.pure-form .pure-group input:last-child,
+.pure-form .pure-group textarea:last-child {
+    top: -2px;
+    border-radius: 0 0 4px 4px;
+    margin: 0;
+}
+
+.pure-form .pure-group button {
+    margin: 0.35em 0;
+}
+
+.pure-form .pure-input-1 {
+    width: 100%;
+}
+
+.pure-form .pure-input-3-4 {
+    width: 75%;
+}
+
+.pure-form .pure-input-2-3 {
+    width: 66%;
+}
+
+.pure-form .pure-input-1-2 {
+    width: 50%;
+}
+
+.pure-form .pure-input-1-3 {
+    width: 33%;
+}
+
+.pure-form .pure-input-1-4 {
+    width: 25%;
+}
+
+
+/* Inline help for forms */
+
+
+/* NOTE: pure-help-inline is deprecated. Use .pure-form-message-inline instead. */
+
+.pure-form .pure-help-inline,
+.pure-form-message-inline {
+    display: inline-block;
+    padding-left: 0.3em;
+    color: #666;
+    vertical-align: middle;
+    font-size: 0.875em;
+}
+
+
+/* Block help for forms */
+
+.pure-form-message {
+    display: block;
+    color: #666;
+    font-size: 0.875em;
+}
+
+@media only screen and (max-width: 480px) {
+    .pure-form button[type="submit"] {
+        margin: 0;
+    }
+    .pure-form input:not([type]),
+    .pure-form input[type="text"],
+    .pure-form input[type="password"],
+    .pure-form input[type="email"],
+    .pure-form input[type="url"],
+    .pure-form input[type="date"],
+    .pure-form input[type="month"],
+    .pure-form input[type="time"],
+    .pure-form input[type="datetime"],
+    .pure-form input[type="datetime-local"],
+    .pure-form input[type="week"],
+    .pure-form input[type="number"],
+    .pure-form input[type="search"],
+    .pure-form input[type="tel"],
+    .pure-form input[type="color"],
+    .pure-form label {
+        margin-bottom: 0.3em;
+        display: block;
+    }
+    .pure-group input:not([type]),
+    .pure-group input[type="text"],
+    .pure-group input[type="password"],
+    .pure-group input[type="email"],
+    .pure-group input[type="url"],
+    .pure-group input[type="date"],
+    .pure-group input[type="month"],
+    .pure-group input[type="time"],
+    .pure-group input[type="datetime"],
+    .pure-group input[type="datetime-local"],
+    .pure-group input[type="week"],
+    .pure-group input[type="number"],
+    .pure-group input[type="search"],
+    .pure-group input[type="tel"],
+    .pure-group input[type="color"] {
+        margin-bottom: 0;
+    }
+    .pure-form-aligned .pure-control-group label {
+        margin-bottom: 0.3em;
+        text-align: left;
+        display: block;
+        width: 100%;
+    }
+    .pure-form-aligned .pure-controls {
+        margin: 1.5em 0 0 0;
+    }
+    /* NOTE: pure-help-inline is deprecated. Use .pure-form-message-inline instead. */
+    .pure-form .pure-help-inline,
+    .pure-form-message-inline,
+    .pure-form-message {
+        display: block;
+        font-size: 0.75em;
+        /* Increased bottom padding to make it group with its related input element. */
+        padding: 0.2em 0 0.8em;
+    }
+}
+
+.form-all .pure-control-group .form-text {
+    text-align: left;
+    font-family: 'cwTeXHei', sans-serif;
+    font-size: 14px;
+    color: #3D1101;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.pure-form-aligned .pure-controls {
+    margin: 0;
+}
+
+.pure-controls label {
+    float: left;
+    padding-right: 36px;
+}
+
+.form h4 {
+    font-family: 'cwTeXHei', sans-serif;
+    font-size: 14px;
+    color: #3D1101;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.pure-radio {
+    font-family: 'cwTeXHei', sans-serif;
+    font-size: 14px;
+    color: #3D1101;
+}
+
+.but {
+    float: right;
+    margin-top: 60px;
+}
+
+.but .cancel {
+    float: left;
+    width: 70px;
+    height: 32px;
+    background-color: #a09e9e;
+    border: none;
+    color: white;
+    font-size: 14px;
+    margin-right: 5px;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.but .submit {
+    float: left;
+    width: 70px;
+    height: 32px;
+    background-color: #f56c23;
+    border: none;
+    color: white;
+    font-size: 14px;
+    margin-right: 5px;
+    font-weight: bold;
+    border-radius: 3px;
+}
+.but .cancel:hover{
+background-color: #5b5958;
+}
+
+.but .submit:hover{
+background-color: #ba4405;
+}
+
+
+@media (max-width: 736px) {
+    .form-map {
+        margin-left: 0;
+        float: none;
+        padding: 0 15px;
+    }
+    .form {
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 667px) {
+    .form-map {
+        margin-left: 0;
+        float: none;
+        padding: 0 15px;
+    }
+    .form {
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 620px) and (min-width: 426px){
+        .form-map {
+        margin-left: 0;
+        float: none;
+        padding: 0 15px;
+        margin-top: 15px;
+        text-align:center; 
+    }
+    .form {
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0 15px;
+        margin: 0 auto;
+      width: 75%;
+    }
+}
+
+@media (max-width: 425px) {
+    .form-map {
+        margin-left: 0;
+        float: none;
+        padding: 0 15px;
+    }
+    .form {
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 375px) {
+    .form-map {
+        margin-left: 0;
+        float: none;
+        padding: 0 15px;
+    }
+    .form {
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 320px) {
+    .form-map {
+        margin-left: 0;
+        float: none;
+        padding: 0 15px;
+
+
+    }
+    .form {
+
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0 15px;
+  
+    }
+}
+
+
+.footer {
+    background: #efe9e7;
+    width: 100%;
+    overflow: hidden;
+    float: left;
+}
+
+.footer-content {
+    float: left;
+    width: 29%;
+    margin-top: 50px;
+    margin-right: 21px;
+    margin-left: 43px;
+}
+
+.footer-content p {
+    margin-top: 16px;
+}
+
+.footer-tel {
+    float: left;
+    margin-top: 50px;
+}
+
+.footer-tel p {
+    margin-top: 16px;
+}
+
+.footer-logo {
+    margin-top: 50px;
+    margin-right: 2%;
+}
+
+.footer-logo .logo2 {
+    text-align: right;
+}
+
+.footer-community {
+    width: 100%;
+    text-align: right;
+}
+
+.footer-community img {
+    margin-top: 22px;
+    width: 31px;
+    height: 31px;
+}
+
+.footer h3 {
+    font-family: 'cwTeXHei', sans-serif;
+    font-size: 24px;
+    color: #3D1101;
+}
+
+.footer p {
+    font-family: 'cwTeXHei', sans-serif;
+    font-size: 16px;
+    color: #3D1101;
+    line-height: 20px;
+}
+
+@media (max-width: 425px) {
+    .footer-content {
+        float: none;
+        width: 90%;
+        padding: 0 15px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .footer-tel {
+        float: none;
+        padding: 0 15px;
+    }
+    .footer-logo {
+        margin-right: 5%;
+    }
+}
+
+@media (max-width: 375px) {
+    .footer-content {
+        float: none;
+        width: 90%;
+        padding: 0 15px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .footer-tel {
+        float: none;
+        padding: 0 15px;
+    }
+    .footer-logo {
+        margin-right: 5%;
+    }
+}
+
+@media (max-width: 320px) {
+    .footer-content {
+        float: none;
+        width: 90%;
+        padding: 0 15px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .footer-tel {
+        float: none;
+        padding: 0 15px;
+    }
+    .footer-logo {
+        margin-right: 5%;
+    }
+}
